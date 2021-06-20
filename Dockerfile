@@ -7,6 +7,8 @@ RUN apk add gcc libffi-dev musl-dev \
             openssl openssl-dev make \
             python3 python3-dev py-pip && \
     pip --no-cache-dir install -U pip && \
+    pip --no-cache-dir install -U wheel && \
     pip --no-cache-dir install azure-cli && \
     apk del --purge python3-dev gcc \
-                    musl-dev make
+                    musl-dev make libffi-dev \
+                    openssl-dev
